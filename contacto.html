@@ -6,12 +6,15 @@
 <title>Contacto · Cotiza tu proyecto | Masser</title>
 <meta name="description" content="Solicita una cotización para tu proyecto de construcción o remodelación. Viviendas, oficinas y centros educacionales. Teléfono +56 9 6659 3109 · info@masser.cl">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="canonical" href="https://www.masser.cl/contacto.html">
 <meta property="og:title" content="Contacto | Masser">
-<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image" content="https://www.masser.cl/assets/og-image.jpg">
+<meta property="og:url" content="https://www.masser.cl/contacto.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MW8NN7PKX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5MW8NN7PKX');</script>
 </head>
@@ -26,6 +29,7 @@
     <a href="colegios.html">Colegios y Jardines</a>
     <a href="index.html#nosotros">Nosotros</a>
     <a href="contacto.html" class="active">Contacto</a>
+    <a href="" onclick="abrirCalendly();return false;">Agendar reunión</a>
     <a href="contacto.html" class="btn btn-primary nav-cta">Cotizar</a>
   </div>
   <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -38,6 +42,7 @@
   <a href="colegios.html">Colegios y Jardines</a>
   <a href="index.html#nosotros">Nosotros</a>
   <a href="contacto.html">Contacto</a>
+  <a href="" onclick="abrirCalendly();return false;">Agendar reunión</a>
   <a href="contacto.html" class="btn btn-primary">Cotizar proyecto</a>
 </aside>
 
@@ -57,6 +62,7 @@
         <div class="cinfo"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><b>Dirección</b><span>Guardia Vieja 202, Of. 403, Providencia</span></div></div>
         <div class="cinfo"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Horario</b><span>Lun – Vie: 9:00 – 18:00 · Sáb: 10:00 – 14:00</span></div></div>
         <a class="btn wa-btn" data-wa href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.755z"/></svg> Escríbenos por WhatsApp</a>
+        <a class="btn" href="" onclick="abrirCalendly();return false;">Agendar una reunión</a>
       </div>
 
       <form class="form-card reveal" id="contact-form" novalidate>
@@ -119,5 +125,14 @@
 </a>
 
 <script src="assets/script.js"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+function abrirCalendly(){
+  if(window.Calendly){Calendly.initPopupWidget({url:"https://calendly.com/masser-info/30min"});}
+  else{window.open("https://calendly.com/masser-info/30min","_blank");}
+  if(window.gtag){gtag("event","lead_agendar",{metodo:"calendly"});}
+  return false;
+}
+</script>
 </body>
 </html>

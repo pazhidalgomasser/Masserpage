@@ -6,12 +6,15 @@
 <title>Oficinas y Espacios Corporativos | Masser</title>
 <meta name="description" content="Habilitación y remodelación de oficinas corporativas: arquitectura, obras civiles, especialidades, mobiliario, iluminación y climatización. Proyectos para Orica, Nipro, Metro L7 y más.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="canonical" href="https://www.masser.cl/oficinas.html">
 <meta property="og:title" content="Oficinas y Espacios Corporativos | Masser">
-<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image" content="https://www.masser.cl/assets/og-image.jpg">
+<meta property="og:url" content="https://www.masser.cl/oficinas.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MW8NN7PKX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5MW8NN7PKX');</script>
 </head>
@@ -26,6 +29,7 @@
     <a href="colegios.html">Colegios y Jardines</a>
     <a href="index.html#nosotros">Nosotros</a>
     <a href="contacto.html">Contacto</a>
+    <a href="" onclick="abrirCalendly();return false;">Agendar reunión</a>
     <a href="contacto.html" class="btn btn-primary nav-cta">Cotizar</a>
   </div>
   <button class="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -38,6 +42,7 @@
   <a href="colegios.html">Colegios y Jardines</a>
   <a href="index.html#nosotros">Nosotros</a>
   <a href="contacto.html">Contacto</a>
+  <a href="" onclick="abrirCalendly();return false;">Agendar reunión</a>
   <a href="contacto.html" class="btn btn-primary">Cotizar proyecto</a>
 </aside>
 
@@ -149,5 +154,14 @@
 </a>
 
 <script src="assets/script.js"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+function abrirCalendly(){
+  if(window.Calendly){Calendly.initPopupWidget({url:"https://calendly.com/masser-info/30min"});}
+  else{window.open("https://calendly.com/masser-info/30min","_blank");}
+  if(window.gtag){gtag("event","lead_agendar",{metodo:"calendly"});}
+  return false;
+}
+</script>
 </body>
 </html>
